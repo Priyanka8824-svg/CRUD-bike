@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Show</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Bike Records</h1>
+
+    <table class="table table-dark table-striped">
+
+        <thead>
+            <tr>
+                <td>Bike Series</td>
+                <td>Bike name</td>
+                <td>Bike Chasis Number</td>
+                <td>Bike Color</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for bike in obj %}
+            <tr>
+                <td>{{bike.series}}</td>
+                <td>{{bike.name}}</td>
+                <td>{{bike.chasis_num}}</td>
+                <td>{{bike.color}}</td>
+
+            <td>
+
+                <a href="/a1/uv/{{bike.series}}/"><button class="btn btn-success">Update</button></a>
+                <a href="/a1/dv/{{bike.series}}"><button class="btn btn-warning">Delete</button></a>
+            </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
